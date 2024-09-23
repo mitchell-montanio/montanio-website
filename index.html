@@ -19,13 +19,13 @@
             "https://www.linkedin.com/in/mitchell-montanio-95920b151/"
           ]
         }
-        </script>
+    </script>
 
     <style>
         /* General Styles */
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #f4f7f6;
+            background-color: #f0f4f8;
             margin: 0;
             padding: 0;
             display: flex;
@@ -38,17 +38,18 @@
         /* Container for the content */
         .container {
             background-color: #fff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 50px 40px;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
             max-width: 600px;
             text-align: center;
-            transition: transform 0.3s ease;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
 
         /* Hover effect */
         .container:hover {
-            transform: scale(1.03);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
         }
 
         /* Heading and Subheading Styles */
@@ -56,11 +57,17 @@
             font-size: 36px;
             margin-bottom: 10px;
             color: #2c3e50;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-size: 26px;
+            margin-bottom: 10px;
+            color: #34495e;
         }
 
         h3 {
-            font-size: 24px;
-            margin-top: 5px;
+            font-size: 20px;
             margin-bottom: 20px;
             color: #2980b9;
         }
@@ -68,8 +75,9 @@
         /* Paragraph Styles */
         p {
             font-size: 18px;
-            color: #666;
-            line-height: 1.6;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 20px;
         }
 
         /* Link Styles */
@@ -86,9 +94,9 @@
         /* Button-like link for the resume */
         .button-link {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 12px 24px;
             margin-top: 20px;
-            border-radius: 25px;
+            border-radius: 30px;
             background-color: #2980b9;
             color: #fff;
             font-weight: bold;
@@ -101,18 +109,23 @@
 
         /* Social Media Icons (Optional) */
         .social-links a {
-            margin: 0 10px;
+            margin: 0 15px;
             font-size: 24px;
+            color: #2980b9;
+        }
+
+        .social-links a:hover {
+            color: #3498db;
         }
 
         /* Media Queries for responsiveness */
         @media (max-width: 600px) {
             body {
-                padding: 20px;
+                padding: 15px;
             }
 
             .container {
-                padding: 20px;
+                padding: 30px;
             }
 
             h1 {
@@ -120,15 +133,19 @@
             }
             
             h2 {
-                font-size: 24px;
+                font-size: 22px;
             }
 
             h3 {
-                font-size: 20px;
+                font-size: 18px;
             }
 
             p {
                 font-size: 16px;
+            }
+
+            .button-link {
+                padding: 10px 20px;
             }
         }
     </style>
@@ -136,7 +153,7 @@
 <body>
     <div class="container">
         <h1>Mitchell Montanio</h1>
-        <h2>Data-Driven Professional</h3>
+        <h2>Data-Driven Professional</h2>
         <h3>Data Engineer | Data Analyst | Data Scientist</h3>
         <p>Welcome to my website! I am a data-driven professional with extensive experience in data engineering and analytics. Contact me using the information below.</p>
         <p>Email: <a href="mailto:mitchell@montanio.org">Mitchell@Montanio.org</a></p>
