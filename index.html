@@ -3,41 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Mitchell Montanio | Data Professional</title>
     <style>
+        /* General Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        /* Container for the content */
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
             text-align: center;
-            padding: 50px;
-            background-color: #f0f0f0;
+            transition: transform 0.3s ease;
         }
+
+        /* Hover effect */
+        .container:hover {
+            transform: scale(1.03);
+        }
+
+        /* Heading and Subheading Styles */
         h1 {
-            color: #333;
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: #2c3e50;
         }
+
         h3 {
-            color: #333;
+            font-size: 24px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            color: #2980b9;
         }
+
+        /* Paragraph Styles */
         p {
-            color: #666;
             font-size: 18px;
+            color: #666;
+            line-height: 1.6;
         }
+
+        /* Link Styles */
         a {
-            color: #0066cc;
+            color: #e74c3c;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
         }
+
         a:hover {
             text-decoration: underline;
+        }
+
+        /* Button-like link for the resume */
+        .button-link {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 25px;
+            background-color: #2980b9;
+            color: #fff;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-link:hover {
+            background-color: #3498db;
+        }
+
+        /* Social Media Icons (Optional) */
+        .social-links a {
+            margin: 0 10px;
+            font-size: 24px;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 600px) {
+            body {
+                padding: 20px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Mitchell Montanio</h1>
-    <h3>Data-focused Professional</h3>
-    <h3>Data Engineer, Data Analyst, Data Scientist</p>
-    <p>Welcome to my website.</p>
-    <p>Email: <a href="mailto:mitchell@montanio.org">Mitchell@Montanio.org</a></p>
-    <p><a href="https://www.linkedin.com/in/mitchell-montanio-95920b151/">LinkedIn</a></p>
-    <p><a href="./sample-resume.txt" target="_blank">Resume</a></p>
+    <div class="container">
+        <h1>Mitchell Montanio</h1>
+        <h3>Data-focused Professional</h3>
+        <h3>Data Engineer | Data Analyst | Data Scientist</h3>
+        <p>Welcome to my website!</p>
+        <p>Email: <a href="mailto:mitchell@montanio.org">Mitchell@Montanio.org</a></p>
+
+        <!-- LinkedIn & Resume Links -->
+        <p class="social-links">
+            <a href="https://www.linkedin.com/in/mitchell-montanio-95920b151/" target="_blank">LinkedIn</a>
+        </p>
+        <p><a href="./sample-resume.txt" target="_blank" class="button-link">Download Resume</a></p>
+    </div>
 </body>
 </html>
