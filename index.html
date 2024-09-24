@@ -25,27 +25,53 @@
 
     <style>
         /* General Styles */
+        html {
+            height: 100%;
+            margin: 0; 
+            display: flex; 
+            flex-direction: column;
+        }
+
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #f0f4f8;
+            background-color: #121212; /* Dark green background */
             margin: 0;
             padding: 0;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            color: #333;
+            color: #f4f4f4; /* Soft off-white text */
+            height: 100%;
+        }
+
+        .parent-container {
+            display: flex;
+            flex-direction: column; /* Stack child elements vertically */
+            padding-top: 100px;
+            flex: 1;
+            margin-top: 50px;
         }
 
         /* Container for the content */
         .container {
-            background-color: #fff;
+            background-color: #1E1E1E; /* Soft grey background */
             padding: 50px 40px;
             border-radius: 15px;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
             max-width: 600px;
             text-align: center;
             transition: transform 0.4s ease, box-shadow 0.4s ease;
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;
+            clear: both;
+        }
+
+        .container#home {
+            margin-top: 20px;
+            margin-bottom: 0px;
         }
 
         /* Hover effect */
@@ -58,33 +84,33 @@
         h1 {
             font-size: 36px;
             margin-bottom: 10px;
-            color: #2c3e50;
+            color: #228B22; /* Homogenized text color */
             letter-spacing: 1px;
         }
 
         h2 {
             font-size: 26px;
             margin-bottom: 10px;
-            color: #34495e;
+            color: #228B22; /* Homogenized text color */
         }
 
         h3 {
             font-size: 20px;
             margin-bottom: 20px;
-            color: #2980b9;
+            color: #228B22; /* Homogenized text color */
         }
 
         /* Paragraph Styles */
         p {
             font-size: 18px;
-            color: #555;
+            color: #5fb987;
             line-height: 1.7;
             margin-bottom: 20px;
         }
 
         /* Link Styles */
         a {
-            color: #e74c3c;
+            color: #39FF14; /* Matches text color */
             text-decoration: none;
             font-weight: 600;
         }
@@ -99,25 +125,25 @@
             padding: 12px 24px;
             margin-top: 20px;
             border-radius: 30px;
-            background-color: #2980b9;
-            color: #fff;
+            background-color: #11331a; /* Same as text color */
+            color: #39FF14; /* Green for contrast */
             font-weight: bold;
             transition: background-color 0.3s ease;
         }
 
         .button-link:hover {
-            background-color: #3498db;
+            background-color: #8A2BE2; /* Slight hover effect with a softer shade */
         }
 
-        /* Social Media Icons (Optional) */
+        /* Social Media Icons */
         .social-links a {
             margin: 0 15px;
             font-size: 24px;
-            color: #2980b9;
+            color: #39FF14; /* Homogenized text color */
         }
 
         .social-links a:hover {
-            color: #3498db;
+            color: #f0f0f5; /* Lighter shade on hover */
         }
 
         /* Media Queries for responsiveness */
@@ -150,21 +176,113 @@
                 padding: 10px 20px;
             }
         }
+
+         /* Navbar Styles */
+         .navbar {
+            position: fixed; /* Fixes the navbar to the top */
+            top: 0; /* Position at the top */
+            left: 0; /* Align to the left */
+            right: 0; /* Align to the right */
+            background-color: rgba(44, 62, 80, 0.9); /* Dark background for the navbar with transparency */
+            padding: 15px; /* Spacing around the navbar */
+            text-align: center; /* Center the items */
+            z-index: 1000; /* Ensure it is above other content */
+        }
+
+        .nav-links {
+            list-style: none; /* Remove bullets from list */
+            padding: 0; /* Remove default padding */
+            margin: 0; /* Remove default margin */
+        }
+
+        .nav-links li {
+            display: inline; /* Display items in a row */
+            margin: 0 15px; /* Spacing between menu items */
+        }
+
+        .nav-links a {
+            color: #00FFFF; /* Link color */
+            text-decoration: none; /* Remove underline */
+            font-weight: bold; /* Bold text */
+            transition: color 0.3s ease; /* Smooth color transition */
+        }
+
+        .nav-links a:hover {
+            color: #3498db; /* Lighter blue on hover */
+        }
+
+        .footer {
+            background-color: rgba(44, 62, 80, 0.9); 
+            color: #fff; 
+            padding: 20px; 
+            text-align: center; 
+            position: relative; 
+            bottom: 0; 
+            width: 100%;
+        }
+
+        .footer-container {
+            max-width: 1200px; /* Max width for the footer content */
+            margin: 0 auto; /* Center the footer */
+        }
+
+        .footer a {
+            color: #00FFFF; /* Link color */
+            text-decoration: none; /* Remove underline */
+            margin: 0 10px; /* Spacing between links */
+        }
+
+        .footer a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Mitchell Montanio</h1>
-        <h2>Data-Driven Professional</h2>
-        <h3>Data Engineer | Data Analyst | Data Scientist</h3>
-        <p>Welcome to my website! I am a data-driven professional with extensive experience in data engineering and analytics. Contact me using the information below.</p>
-        <p>Email: <a href="mailto:mitchell@montanio.org">Mitchell@Montanio.org</a></p>
-
-        <!-- LinkedIn & Resume Links -->
-        <p class="social-links">
-            <a href="https://www.linkedin.com/in/mitchell-montanio-95920b151/" target="_blank">LinkedIn</a>
-        </p>
-        <p><a href="./sample-resume.txt" target="_blank" class="button-link">Download Resume</a></p>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#resume">Resume</a></li>
+        </ul>
+    </nav>
     </div>
+    <div class="parent-container">
+        <div class="container" id="home">
+            <h1>Mitchell Montanio</h1>
+            <!-- <h2>Data-Driven Professional</h2> -->
+            <h3>Data Engineer | Data Analyst | Data Scientist</h3>
+        </div>
+        <br>
+        <div class="container" id="about">
+            <h2>WHO AM I?</h3>
+            <p>I am a data-driven professional with extensive experience in data engineering and analytics.</p>
+        </div>
+        <div class="container" id="contact">
+            <h2>CONTACT ME</h3>
+            <p>Email: <a href="mailto:mitchell@montanio.org">Mitchell@Montanio.org</a></p>
+            <!-- LinkedIn & Resume Links -->
+            <p class="social-links">
+                <a href="https://www.linkedin.com/in/mitchell-montanio-95920b151/" target="_blank">LinkedIn</a>
+            </p>
+        </div>
+        <div class="container" id="resume">
+            <p><a href="./sample-resume.txt" target="_blank" class="button-link">Download Resume</a></p>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>Contact: <a href="mailto:mitchell@montanio.org">Mitchell@Montanio.org</a> | Phone: (123) 456-7890</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/mitchell-montanio-95920b151/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/mitchell-montanio" target="_blank">GitHub</a>
+            </div>
+            <p>© 2024 Mitchell Montanio. All rights reserved.</p>
+            <!-- <p><a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p> -->
+        </div>
+    </footer>
 </body>
 </html>
