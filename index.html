@@ -34,7 +34,7 @@
 
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #121212; /* Dark green background */
+            background-color: #1a1a1a; /* Dark background */
             margin: 0;
             padding: 0;
             display: flex;
@@ -42,7 +42,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            color: #f4f4f4; /* Soft off-white text */
+            color: #E5E5E5; /* Light grey for text */
             height: 100%;
         }
 
@@ -51,72 +51,67 @@
             flex-direction: column; /* Stack child elements vertically */
             padding-top: 100px;
             flex: 1;
-            margin-top: 50px;
+            /* margin-top: 50px; */
         }
 
         /* Container for the content */
         .container {
-            background-color: #1E1E1E; /* Soft grey background */
+            background-color: #2a2a2a; /* Dark grey background */
             padding: 50px 40px;
             border-radius: 15px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
             max-width: 600px;
             text-align: center;
             transition: transform 0.4s ease, box-shadow 0.4s ease;
             display: block;
             width: 100%;
             margin-bottom: 20px;
-            clear: both;
-        }
-
-        .container#home {
-            margin-top: 20px;
-            margin-bottom: 0px;
         }
 
         /* Hover effect */
         .container:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         /* Heading and Subheading Styles */
         h1 {
             font-size: 36px;
             margin-bottom: 10px;
-            color: #228B22; /* Homogenized text color */
+            color: #4CAF50; /* Dark green for main heading */
             letter-spacing: 1px;
         }
 
         h2 {
             font-size: 26px;
             margin-bottom: 10px;
-            color: #228B22; /* Homogenized text color */
+            color: #4CAF50; /* Dark green */
         }
 
         h3 {
             font-size: 20px;
             margin-bottom: 20px;
-            color: #228B22; /* Homogenized text color */
+            color: #4CAF50; /* Dark green */
         }
 
         /* Paragraph Styles */
         p {
             font-size: 18px;
-            color: #5fb987;
+            color: #27b35d; /* Lighter greenish color */
             line-height: 1.7;
             margin-bottom: 20px;
         }
 
         /* Link Styles */
         a {
-            color: #39FF14; /* Matches text color */
+            color: #4CAF50; /* Teal for links */
             text-decoration: none;
             font-weight: 600;
         }
 
         a:hover {
             text-decoration: underline;
+            color: #76c7c0; /* Dark green on hover */
         }
 
         /* Button-like link for the resume */
@@ -125,25 +120,26 @@
             padding: 12px 24px;
             margin-top: 20px;
             border-radius: 30px;
-            background-color: #11331a; /* Same as text color */
-            color: #39FF14; /* Green for contrast */
+            background-color: #4CAF50; /* Dark background for button */
+            color: #3c3c3c; /* Teal for button text */
             font-weight: bold;
             transition: background-color 0.3s ease;
         }
 
         .button-link:hover {
-            background-color: #8A2BE2; /* Slight hover effect with a softer shade */
+            background-color: #76c7c0; /* Dark green hover effect */
+            color: #1a1a1a; /* Dark text color */
         }
 
         /* Social Media Icons */
         .social-links a {
             margin: 0 15px;
             font-size: 24px;
-            color: #39FF14; /* Homogenized text color */
+            color: #4CAF50; /* Teal for social links */
         }
 
         .social-links a:hover {
-            color: #f0f0f5; /* Lighter shade on hover */
+            color: #76c7c0; /* Dark green on hover */
         }
 
         /* Media Queries for responsiveness */
@@ -177,13 +173,13 @@
             }
         }
 
-         /* Navbar Styles */
-         .navbar {
+        /* Navbar Styles */
+        .navbar {
             position: fixed; /* Fixes the navbar to the top */
             top: 0; /* Position at the top */
             left: 0; /* Align to the left */
             right: 0; /* Align to the right */
-            background-color: rgba(44, 62, 80, 0.9); /* Dark background for the navbar with transparency */
+            background-color: #2a2a2a; /* Dark background for the navbar with transparency */
             padding: 15px; /* Spacing around the navbar */
             text-align: center; /* Center the items */
             z-index: 1000; /* Ensure it is above other content */
@@ -201,19 +197,19 @@
         }
 
         .nav-links a {
-            color: #00FFFF; /* Link color */
+            color: #4CAF50; /* Teal for menu links */
             text-decoration: none; /* Remove underline */
             font-weight: bold; /* Bold text */
             transition: color 0.3s ease; /* Smooth color transition */
         }
 
         .nav-links a:hover {
-            color: #3498db; /* Lighter blue on hover */
+            color: #35df3a; /* Dark green on hover */
         }
 
         .footer {
-            background-color: rgba(44, 62, 80, 0.9); 
-            color: #fff; 
+            background-color: #2a2a2a; 
+            color: #E5E5E5; /* Light grey for footer text */
             padding: 20px; 
             text-align: center; 
             position: relative; 
@@ -227,15 +223,15 @@
         }
 
         .footer a {
-            color: #00FFFF; /* Link color */
+            color: #4CAF50; /* Teal for footer links */
             text-decoration: none; /* Remove underline */
             margin: 0 10px; /* Spacing between links */
         }
 
         .footer a:hover {
             text-decoration: underline; /* Underline on hover */
+            color: #76c7c0; /* Dark green on hover */
         }
-
     </style>
 </head>
 <body>
@@ -247,22 +243,19 @@
             <li><a href="#resume">Resume</a></li>
         </ul>
     </nav>
-    </div>
+
     <div class="parent-container">
         <div class="container" id="home">
             <h1>Mitchell Montanio</h1>
-            <!-- <h2>Data-Driven Professional</h2> -->
             <h3>Data Engineer | Data Analyst | Data Scientist</h3>
         </div>
-        <br>
         <div class="container" id="about">
-            <h2>WHO AM I?</h3>
+            <h2>WHO AM I?</h2>
             <p>I am a data-driven professional with extensive experience in data engineering and analytics.</p>
         </div>
         <div class="container" id="contact">
-            <h2>CONTACT ME</h3>
+            <h2>CONTACT ME</h2>
             <p>Email: <a href="mailto:mitchell@montanio.org">Mitchell@Montanio.org</a></p>
-            <!-- LinkedIn & Resume Links -->
             <p class="social-links">
                 <a href="https://www.linkedin.com/in/mitchell-montanio-95920b151/" target="_blank">LinkedIn</a>
             </p>
@@ -272,16 +265,10 @@
         </div>
     </div>
 
-    <!-- Footer Section -->
     <footer class="footer">
         <div class="footer-container">
-            <p>Contact: <a href="mailto:mitchell@montanio.org">Mitchell@Montanio.org</a> | Phone: (123) 456-7890</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/mitchell-montanio-95920b151/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/mitchell-montanio" target="_blank">GitHub</a>
-            </div>
-            <p>© 2024 Mitchell Montanio. All rights reserved.</p>
-            <!-- <p><a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p> -->
+            <p>&copy; 2024 Mitchell Montanio. All rights reserved.</p>
+            <p><a href="#home">Back to Top</a></p>
         </div>
     </footer>
 </body>
