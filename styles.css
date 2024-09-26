@@ -218,9 +218,9 @@ a:hover {
 
 /* Footer Styles */
 .footer {
-    background-color: #2a2a2a; 
+    /* background-color: #2a2a2a;  */
     color: #E5E5E5; /* Light grey for footer text */
-    padding: 20px; 
+    padding: 5px; 
     text-align: center; 
     width: 100%; /* Ensure the footer spans the full width */
     flex-shrink: 0; /* Prevent footer from shrinking */
@@ -229,6 +229,12 @@ a:hover {
 .footer-container {
     width: 100%; /* Max width for the footer content */
     margin: 0 auto; 
+    padding: 0 20px;
+}
+
+.footer-container p {
+    margin: 0; 
+    font-size: 14px;
 }
 
 /* Footer Links */
@@ -236,6 +242,7 @@ a:hover {
     color: #4CAF50; /* Teal for footer links */
     text-decoration: none; /* Remove underline */
     margin: 0 10px; 
+    font-size: 14px;
 }
 
 .footer a:hover {
