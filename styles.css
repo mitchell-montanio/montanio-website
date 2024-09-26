@@ -44,18 +44,6 @@ body {
     z-index: 1000; /* Ensure it is above other content */
 }
 
-/* Navbar Styles */
-.navbar {
-    position: fixed; /* Fixes the navbar to the top */
-    top: 0; /* Position at the top */
-    left: 0; /* Align to the left */
-    right: 0; /* Align to the right */
-    background-color: #2a2a2a; /* Dark background for the navbar */
-    padding: 15px; /* Spacing around the navbar */
-    text-align: center; /* Center the items */
-    z-index: 1000; /* Ensure it is above other content */
-}
-
 /* Navigation Links */
 .nav-links {
     list-style: none; /* Remove bullets from list */
