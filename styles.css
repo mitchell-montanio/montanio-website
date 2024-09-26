@@ -42,6 +42,8 @@ body {
     padding: 15px; /* Spacing around the navbar */
     text-align: center; /* Center the items */
     z-index: 1000; /* Ensure it is above other content */
+    width: 100%;
+    overflow: hidden;
 }
 
 /* Navigation Links */
@@ -52,6 +54,7 @@ body {
     display: flex; /* Use flexbox for horizontal layout */
     justify-content: center; /* Center items */
     align-items: center; /* Align items vertically */
+    flex-wrap: wrap;
 }
 
 /* Navigation Link Styles */
@@ -176,6 +179,10 @@ a:hover {
 
     .nav-links li {
         margin: 0 5px; /* Adjust spacing on mobile */
+    }
+
+    .nav-links a {
+        font-size: 14px; /* Adjust font size for mobile */
     }
     
     body {
