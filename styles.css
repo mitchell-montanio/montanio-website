@@ -219,7 +219,6 @@ a:hover {
 /* Footer Styles */
 .footer {
     /* background-color: #2a2a2a;  */
-    color: #E5E5E5; /* Light grey for footer text */
     padding: 5px; 
     text-align: center; 
     width: 100%; /* Ensure the footer spans the full width */
@@ -235,6 +234,7 @@ a:hover {
 .footer-container p {
     margin: 0; 
     font-size: 14px;
+    color: #5b5b5b;
 }
 
 /* Footer Links */
@@ -248,4 +248,8 @@ a:hover {
 .footer a:hover {
     text-decoration: underline; /* Underline on hover */
     color: #76c7c0; /* Dark green on hover */
+}
+
+.custom-hr {
+    border: 1px solid #2a2a2a;
 }
