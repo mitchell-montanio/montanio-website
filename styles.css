@@ -170,6 +170,14 @@ a:hover {
 
 /* Media Queries for responsiveness */
 @media (max-width: 600px) {
+    .navbar {
+        padding: 10px; /* Less padding for mobile */
+    }
+
+    .nav-links li {
+        margin: 0 5px; /* Adjust spacing on mobile */
+    }
+    
     body {
         padding: 15px;
     }
