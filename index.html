@@ -87,20 +87,6 @@
     </div>
 
     <script>
-        function loadHTML(elementId, file) {
-            fetch(file)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById(elementId).innerHTML = data;
-                })
-                .catch(err => console.error('Error loading file:', err));
-        }
-
-        loadHTML('header', 'header.html');
-        loadHTML('footer', 'footer.html');
-    </script>
-
-    <script>
         document.querySelectorAll('.nav-links a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
