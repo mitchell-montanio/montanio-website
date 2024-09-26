@@ -255,12 +255,16 @@ a:hover {
 }
 
 .image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 200px); /* Adjust height based on header and footer */
-    border: 5px solid black; /* 5px black border */
-    padding: 10px; /* Optional: Adds some space inside the border */
-    background-color: white; /* Optional: Set a background color */
-    box-sizing: border-box; /* Ensures padding is included in the total width/height */
+    display: flex; /* Use flexbox to center the image */
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+    border: 50px solid black; /* 5px black border */
+    margin: 20px auto; /* Center the container and add vertical spacing */
+    max-width: 50%; /* Optional: Limit the container width */
+}
+
+img {
+    max-width: 100%; /* Ensure the image is responsive within its container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensures no extra space below the image */
 }
