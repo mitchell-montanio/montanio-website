@@ -12,11 +12,6 @@
     min-height: 100vh; /* Ensure the page container takes the full viewport height */
 }
 
-/* Content Section */
-.content {
-    flex: 1; /* This makes the content area take up available space */
-}
-
 /* General Styles */
 html, body {
     height: 100%;
@@ -28,22 +23,79 @@ html, body {
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     background-color: #1a1a1a; /* Dark background */
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
     color: #E5E5E5; /* Light grey for text */
-    height: 100%;
 }
 
+/* Header Class */
+.header {
+    padding: 20px;
+    flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed; /* Fixes the navbar to the top */
+    top: 0; /* Position at the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    background-color: #2a2a2a; /* Dark background for the navbar */
+    padding: 15px; /* Spacing around the navbar */
+    text-align: center; /* Center the items */
+    z-index: 1000; /* Ensure it is above other content */
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed; /* Fixes the navbar to the top */
+    top: 0; /* Position at the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    background-color: #2a2a2a; /* Dark background for the navbar */
+    padding: 15px; /* Spacing around the navbar */
+    text-align: center; /* Center the items */
+    z-index: 1000; /* Ensure it is above other content */
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none; /* Remove bullets from list */
+    padding: 0; /* Remove default padding */
+    margin: 0;
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: center; /* Center items */
+    align-items: center; /* Align items vertically */
+}
+
+/* Navigation Link Styles */
+.nav-links li {
+    margin: 0 10px; /* Space between items */
+}
+
+.nav-links a {
+    color: #4CAF50; /* Color for links */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.nav-links a:hover {
+    color: #76c7c0; /* Change color on hover */
+}
+
+/* Separator Styles */
+.nav-links li:not(:last-child) {
+    position: relative; /* Required for proper placement of separator */
+    padding-right: 10px; /* Space between link and separator */
+}
+
+.nav-links li:last-child {
+    padding-left: 10px; /* Space before the last item */
+}
+
+/* Main Content Container */
 .parent-container {
-    display: flex;
-    flex-direction: column; /* Stack child elements vertically */
-    margin-top: 100px;
-    flex: 1;
+    flex: 1; /* Allow parent container to grow and fill space */
+    margin-top: 80px; /* Space below the fixed header */
 }
 
 /* Container for the content */
@@ -55,9 +107,8 @@ body {
     max-width: 600px;
     text-align: center;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    display: block;
-    width: 100%;
-    margin-bottom: 20px;
+    width: 100%; /* Ensure it stretches across */
+    margin: 20px auto; /* Center container with margin */
 }
 
 /* Hover effect */
@@ -66,27 +117,30 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* .container#home {
-    margin-top: 175px;
-} */
+/* Footer Styles */
+.footer {
+    background-color: #2a2a2a; 
+    color: #E5E5E5; /* Light grey for footer text */
+    padding: 20px; 
+    text-align: center; 
+    width: 100%; /* Ensure the footer spans the full width */
+    flex-shrink: 0; /* Prevent footer from shrinking */
+}
 
 /* Heading and Subheading Styles */
 h1 {
     font-size: 36px;
-    margin-bottom: 10px;
     color: #4CAF50; /* Dark green for main heading */
     letter-spacing: 1px;
 }
 
 h2 {
     font-size: 26px;
-    margin-bottom: 10px;
     color: #4CAF50; /* Dark green */
 }
 
 h3 {
     font-size: 20px;
-    margin-bottom: 20px;
     color: #4CAF50; /* Dark green */
 }
 
@@ -95,7 +149,6 @@ p {
     font-size: 18px;
     color: #27b35d; /* Lighter greenish color */
     line-height: 1.7;
-    margin-bottom: 20px;
 }
 
 /* Link Styles */
@@ -114,7 +167,6 @@ a:hover {
 .button-link {
     display: inline-block;
     padding: 12px 24px;
-    margin-top: 20px;
     border-radius: 30px;
     background-color: #4CAF50; /* Dark background for button */
     color: #3c3c3c; /* Teal for button text */
@@ -162,6 +214,8 @@ a:hover {
 
     p {
         font-size: 16px;
+        margin: 0;
+        padding: 0;
     }
 
     .button-link {
@@ -169,69 +223,14 @@ a:hover {
     }
 }
 
-/* Header Class */
-.header {
-    padding: 20px;
-    margin-bottom: 125px;
-}
-
-/* Header (div) Styles */
-.navbar {
-    position: fixed; /* Fixes the navbar to the top */
-    top: 0; /* Position at the top */
-    left: 0; /* Align to the left */
-    right: 0; /* Align to the right */
-    background-color: #2a2a2a; /* Dark background for the navbar with transparency */
-    padding: 15px; /* Spacing around the navbar */
-    text-align: center; /* Center the items */
-    z-index: 1000; /* Ensure it is above other content */
-}
-
-.nav-links {
-    list-style: none; /* Remove bullets from list */
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
-}
-
-.nav-links li {
-    display: inline; /* Display items in a row */
-    margin: 0 15px; /* Spacing between menu items */
-}
-
-.nav-links a {
-    color: #4CAF50; /* Teal for menu links */
-    text-decoration: none; /* Remove underline */
-    font-weight: bold; /* Bold text */
-    transition: color 0.3s ease; /* Smooth color transition */
-}
-
-.nav-links a:hover {
-    color: #35df3a; /* Dark green on hover */
-}
-
-/* Footer Styles */
-.footer {
-    background-color: #2a2a2a; 
-    color: #E5E5E5; /* Light grey for footer text */
-    padding: 20px; 
-    text-align: center; 
-    width: 100%; /* This ensures the footer spans the full width */
-}
-
-.footer-container {
-    width: 100%; /* Max width for the footer content */
-    margin: 0 auto; /* Center the footer content within the max-width */
-    padding: 0 20px; /* Optional: Add some padding for smaller screens */
-}
-
+/* Footer Links */
 .footer a {
     color: #4CAF50; /* Teal for footer links */
     text-decoration: none; /* Remove underline */
-    margin: 0 10px; /* Spacing between links */
+    margin: 0 10px; 
 }
 
 .footer a:hover {
     text-decoration: underline; /* Underline on hover */
     color: #76c7c0; /* Dark green on hover */
 }
-
