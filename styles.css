@@ -1,3 +1,22 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and border are included in the width */
+}
+
+/* Flexbox layout for the entire page */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the page container takes the full viewport height */
+}
+
+/* Content Section */
+.content {
+    flex: 1; /* This makes the content area take up available space */
+}
+
 /* General Styles */
 html, body {
     height: 100%;
@@ -47,9 +66,9 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-.container#home {
-    margin-top: 250px;
-}
+/* .container#home {
+    margin-top: 175px;
+} */
 
 /* Heading and Subheading Styles */
 h1 {
@@ -150,7 +169,13 @@ a:hover {
     }
 }
 
-/* Navbar Styles */
+/* Header Class */
+.header {
+    padding: 20px;
+    margin-bottom: 125px;
+}
+
+/* Header (div) Styles */
 .navbar {
     position: fixed; /* Fixes the navbar to the top */
     top: 0; /* Position at the top */
@@ -184,19 +209,19 @@ a:hover {
     color: #35df3a; /* Dark green on hover */
 }
 
+/* Footer Styles */
 .footer {
     background-color: #2a2a2a; 
     color: #E5E5E5; /* Light grey for footer text */
     padding: 20px; 
     text-align: center; 
-    position: relative; 
-    bottom: 0; 
-    width: 100%;
+    width: 100%; /* This ensures the footer spans the full width */
 }
 
 .footer-container {
-    max-width: 1200px; /* Max width for the footer content */
-    margin: 0 auto; /* Center the footer */
+    width: 100%; /* Max width for the footer content */
+    margin: 0 auto; /* Center the footer content within the max-width */
+    padding: 0 20px; /* Optional: Add some padding for smaller screens */
 }
 
 .footer a {
@@ -209,3 +234,4 @@ a:hover {
     text-decoration: underline; /* Underline on hover */
     color: #76c7c0; /* Dark green on hover */
 }
+
