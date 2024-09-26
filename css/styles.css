@@ -253,3 +253,14 @@ a:hover {
 .custom-hr {
     border: 1px solid #2a2a2a;
 }
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 200px); /* Adjust height based on header and footer */
+    border: 5px solid black; /* 5px black border */
+    padding: 10px; /* Optional: Adds some space inside the border */
+    background-color: white; /* Optional: Set a background color */
+    box-sizing: border-box; /* Ensures padding is included in the total width/height */
+}
