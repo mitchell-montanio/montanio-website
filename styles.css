@@ -1,5 +1,5 @@
 /* General Styles */
-html {
+html, body {
     height: 100%;
     margin: 0; 
     display: flex; 
@@ -23,14 +23,14 @@ body {
 .parent-container {
     display: flex;
     flex-direction: column; /* Stack child elements vertically */
-    padding-top: 100px;
+    margin-top: 100px;
     flex: 1;
 }
 
 /* Container for the content */
 .container {
     background-color: #2a2a2a; /* Dark grey background */
-    padding: 50px 40px;
+    padding: 40px;
     border-radius: 15px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     max-width: 600px;
@@ -45,6 +45,10 @@ body {
 .container:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.container#home {
+    margin-top: 250px;
 }
 
 /* Heading and Subheading Styles */
