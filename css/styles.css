@@ -219,10 +219,6 @@ a:hover {
         border: 1em solid black; /* Scale down the border for smaller screens */
         max-width: 100%; /* Adjust the container width */
     }
-
-    img {
-        
-    }
 }
 
 /* Footer Styles */
