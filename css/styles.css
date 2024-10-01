@@ -219,6 +219,10 @@ a:hover {
         border: 1em solid black; /* Scale down the border for smaller screens */
         max-width: 100%; /* Adjust the container width */
     }
+
+    img {
+        
+    }
 }
 
 /* Footer Styles */
@@ -263,7 +267,7 @@ a:hover {
     display: flex; /* Use flexbox to center the image */
     justify-content: center; /* Center the image horizontally */
     align-items: center; /* Center the image vertically */
-    border: 50px solid black; /* 5px black border */
+    border: 5vw solid black; /* 5px black border */
     margin: 20px auto; /* Center the container and add vertical spacing */
     max-width: 50%; /* Optional: Limit the container width */
 }
