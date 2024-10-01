@@ -217,7 +217,7 @@ a:hover {
 
     .image-container {
         border: 1em solid black; /* Scale down the border for smaller screens */
-        max-width: 20%; /* Adjust the container width */
+        max-width: 100%; /* Adjust the container width */
     }
 }
 
