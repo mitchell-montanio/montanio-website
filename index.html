@@ -26,7 +26,9 @@
     </script>
 </head>
 <body>
+    <!-- Container for entire page -->
     <div class="page-container">
+        <!-- Header -->
         <header class="navbar">
             <!-- <h1>Website Title</h1> -->
             <ul class="nav-links">
@@ -40,6 +42,7 @@
             </ul>
         </header>
 
+        <!-- Main Content -->
         <main class="content">
             <div class="parent-container">
                 <div class="container" id="home">
@@ -70,22 +73,17 @@
             </div>
         </main>
 
+        <!-- Footer -->
         <hr class="custom-hr">
         
         <footer class="footer">
             <div class="footer-container">
-                <p>&copy; 2024 Mitchell Montanio. All rights reserved.</p>
+                <p>Copyright &copy; 2024 Mitchell Montanio. All rights reserved.</p>
             </div>
         </footer>
-
-        <!-- <footer class="footer">
-            <div class="footer-container">
-                <p>&copy; 2024 Mitchell Montanio. All rights reserved.</p>
-                <p><a href="#home">Back to Top</a></p>
-            </div>
-        </footer> -->
     </div>
 
+    <!-- JavaScript -->
     <script>
         document.querySelectorAll('.nav-links a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -103,7 +101,5 @@
             });
         });
     </script>
-
-
 </body>
 </html>
