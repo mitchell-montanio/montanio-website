@@ -123,3 +123,66 @@ footer {
     margin: 20px auto;
     max-width: 600px;
 }
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Reduce base font size for smaller screens */
+    }
+
+    header {
+        padding: 20px 10px; /* Adjust padding */
+    }
+
+    header h1 {
+        font-size: 2rem; /* Reduce font size */
+    }
+
+    header p {
+        font-size: 1rem; /* Reduce font size */
+    }
+
+    .content {
+        padding: 20px 10px; /* Adjust padding */
+    }
+
+    .content h2 {
+        font-size: 1.5rem; /* Reduce font size */
+    }
+
+    .content p {
+        font-size: 1rem; /* Reduce font size */
+        margin-bottom: 20px; /* Adjust spacing */
+    }
+
+    .horizontal-gallery img {
+        height: 300px; /* Reduce image height */
+    }
+
+    .horizontal-gallery-shorter img {
+        height: 150px; /* Reduce image height */
+    }
+
+    footer {
+        padding: 10px; /* Adjust padding */
+        font-size: 0.9rem; /* Reduce font size */
+    }
+
+    .western-theme {
+        padding: 20px 10px; /* Adjust padding */
+        margin: 10px 0; /* Adjust margin */
+    }
+
+    .western-theme h3 {
+        font-size: 1.5rem; /* Reduce font size */
+    }
+
+    .western-theme p {
+        font-size: 1rem; /* Reduce font size */
+    }
+
+    .western-theme blockquote {
+        font-size: 0.9rem; /* Reduce font size */
+        max-width: 90%; /* Adjust width */
+    }
+}
