@@ -18,6 +18,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Auto-scroll on load
+    galleries.forEach(gallery => {
+        let autoScroll = setInterval(() => {
+            gallery.scrollLeft += 1; // Adjust speed by changing this value
+            // Optional: stop at the end
+            if (gallery.scrollLeft + gallery.clientWidth >= gallery.scrollWidth) {
+                clearInterval(autoScroll);
+            }
+        }, 10); // Adjust interval for speed
+
+        // Pause auto-scroll on hover
+        gallery.addEventListener('mouseenter', () => clearInterval(autoScroll));
+        // Resume auto-scroll on mouse leave
+        gallery.addEventListener('mouseleave', () => {
+            autoScroll = setInterval(() => {
+                gallery.scrollLeft += 1;
+                if (gallery.scrollLeft + gallery.clientWidth >= gallery.scrollWidth) {
+                    clearInterval(autoScroll);
+                }
+            }, 10);
+        });
+    });
+
     galleries.forEach(gallery => {
         gallery.addEventListener('wheel', (e) => {
             if (e.deltaY === 0) return; // Only act on vertical scroll
