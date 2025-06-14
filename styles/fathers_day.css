@@ -155,7 +155,7 @@ footer {
     .horizontal-gallery img,
     .horizontal-gallery-shorter img {
         width: auto; /* Maintain width scaling */
-        max-width: 90%; /* Scale down relative to container width */
+        max-width: 60vh; /* Scale down relative to container width */
         max-height: 20vh; /* Scale height relative to viewport height */
         aspect-ratio: auto; /* Maintain proper dimensions */
     }
