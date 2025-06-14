@@ -1,7 +1,7 @@
 /* General Styles */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f9;
+    background: linear-gradient(to bottom, #f4f4f9, #e0e7ff); /* Soft gradient from white to light blue */
     color: #333;
     margin: 0;
     padding: 0;
@@ -45,27 +45,44 @@ header p {
     line-height: 1.6;
 }
 
-/* Photo Album Styles */
-.photo-album {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    padding: 10px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Horizontal Image Gallery Styles */
+.horizontal-gallery {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 15px; /* Space between images */
+    padding: 10px; /* Padding around the gallery */
+    scroll-behavior: smooth; /* Smooth scrolling effect */
 }
 
-.album-wrapper {
-    display: inline-flex;
-    transition: transform 0.3s ease;
+.horizontal-gallery img {
+    flex-shrink: 0; /* Prevent images from shrinking */
+    width: auto;
+    height: 500px; /* Increased height for taller images */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease; /* Smooth hover effect */
 }
 
-.album-wrapper img {
-    display: inline-block;
-    height: auto;
-    max-height: 300px;
-    margin-right: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* Horizontal Image Gallery Styles */
+.horizontal-gallery-shorter {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 15px; /* Space between images */
+    padding: 10px; /* Padding around the gallery */
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+}
+
+.horizontal-gallery-shorter img {
+    flex-shrink: 0; /* Prevent images from shrinking */
+    width: auto;
+    height: 200px; /* Increased height for taller images */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.horizontal-gallery img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
 }
 
 /* Footer Styles */
@@ -75,156 +92,6 @@ footer {
     background-color: #4a90e2;
     color: #fff;
     font-size: 1rem;
-}
-
-/* Spinning Wheel Styles */
-.spinning-wheel {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    margin: 40px auto;
-    border: 5px solid #FFD700; /* Gold border for emphasis */
-    border-radius: 50%;
-    overflow: hidden;
-    animation: spin 10s linear infinite; /* Spinning animation */
-}
-
-.spinning-wheel img {
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    animation: rotate 10s linear infinite; /* Rotating images */
-}
-
-.spinning-wheel img:nth-child(1) {
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.spinning-wheel img:nth-child(2) {
-    top: 50%;
-    left: 90%;
-    transform: translate(-50%, -50%);
-}
-
-.spinning-wheel img:nth-child(3) {
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.spinning-wheel img:nth-child(4) {
-    top: 50%;
-    left: 10%;
-    transform: translate(-50%, -50%);
-}
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(-360deg);
-    }
-}
-
-/* Revolving Door Styles */
-#revolving-door {
-    position: relative;
-    width: 450px; /* Container width */
-    height: 450px; /* Container height */
-    margin: 40px auto;
-    perspective: 2000px; /* Perspective for 3D effect */
-    overflow: visible; /* Allows images to extend slightly outside the container */
-}
-
-.door-wrapper {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform-style: preserve-3d; /* Enables 3D stacking */
-    transition: transform 0.1s ease-out; /* Smooth rotation */
-}
-
-.door-panel {
-    position: absolute;
-    width: 65%; /* Panel size */
-    height: 65%; /* Panel size */
-    backface-visibility: hidden; /* Hides the back of panels */
-    transform-origin: center;
-    margin: 2px; /* Reduced space between panels */
-}
-
-.door-panel img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* Ensures the entire image fits within the panel */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateY(100px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-#rotation-slider {
-    display: block;
-    margin: 5px auto; /* Reduced vertical margin to move the slider closer to the images */
-    width: 300px;
-    height: 6px; /* Slightly thicker for a sleek look */
-    background: #ccc; /* Light gray for the bar */
-    border-radius: 10px; /* Rounded edges for a modern look */
-    outline: none;
-    cursor: pointer;
-}
-
-#rotation-slider::-webkit-slider-thumb {
-    width: 20px; /* Slightly larger for better usability */
-    height: 20px;
-    background: #007BFF; /* Blue for the thumb */
-    border: none; /* Remove border for a cleaner look */
-    border-radius: 50%; /* Fully rounded thumb */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    cursor: pointer;
-}
-
-#rotation-slider::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
-    background: #007BFF; /* Blue for the thumb */
-    border: none;
-    border-radius: 50%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
 }
 
 /* Western Theme Styles */
@@ -256,5 +123,3 @@ footer {
     margin: 20px auto;
     max-width: 600px;
 }
-
-/*# sourceMappingURL=styles.css.map */
