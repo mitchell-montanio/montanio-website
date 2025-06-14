@@ -126,7 +126,7 @@ footer {
 }
 
 /* Media Query for Smaller Screens */
-@media (max-width: 100%) {
+@media (max-width: 768px) {
     header {
         padding: 20px 10px; /* Adjust padding */
     }
