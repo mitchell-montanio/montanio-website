@@ -2,16 +2,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const galleries = document.querySelectorAll('.horizontal-gallery, .horizontal-gallery-shorter');
 
     galleries.forEach(gallery => {
-        // Determine scroll speed based on screen size
-        function getScrollSpeed() {
-            return window.innerWidth <= 768 ? 5 : 10; // 5px for mobile, 10px for desktop
-        }
-
+        // Auto-scroll
         let autoScroll;
+        function getScrollSpeed() {
+            return window.innerWidth <= 768 ? 5 : 10;
+        }
         function startAutoScroll() {
             autoScroll = setInterval(() => {
                 gallery.scrollLeft += getScrollSpeed();
-                // Optional: stop at the end
+                // Stop at the end
                 if (gallery.scrollLeft + gallery.clientWidth >= gallery.scrollWidth) {
                     clearInterval(autoScroll);
                 }
@@ -21,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Pause auto-scroll on hover
         gallery.addEventListener('mouseenter', () => clearInterval(autoScroll));
-        // Resume auto-scroll on mouse leave
         gallery.addEventListener('mouseleave', startAutoScroll);
 
         // Wheel scroll

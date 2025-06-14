@@ -52,6 +52,7 @@ header p {
     gap: 1.5vh; /* Space between images */
     padding: 1vh; /* Padding around the gallery */
     scroll-behavior: smooth; /* Smooth scrolling effect */
+    overflow: hidden; /* Hide scrollbar for a cleaner look */
 }
 
 .horizontal-gallery img {
