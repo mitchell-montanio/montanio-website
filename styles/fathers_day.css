@@ -57,13 +57,13 @@ header p {
 .horizontal-gallery img {
     flex-shrink: 0; /* Prevent images from shrinking */
     width: auto;
-    height: 500px; /* Increased height for taller images */
+    max-height: 50vh; /* Scale height relative to viewport height */
+    max-width: 100%; /* Ensure images don't overflow their container */
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     transition: transform 0.3s ease; /* Smooth hover effect */
 }
 
-/* Horizontal Image Gallery Styles */
 .horizontal-gallery-shorter {
     display: flex;
     overflow-x: auto; /* Enable horizontal scrolling */
@@ -75,7 +75,8 @@ header p {
 .horizontal-gallery-shorter img {
     flex-shrink: 0; /* Prevent images from shrinking */
     width: auto;
-    height: 200px; /* Increased height for taller images */
+    max-height: 30vh; /* Scale height relative to viewport height */
+    max-width: 100%; /* Ensure images don't overflow their container */
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     transition: transform 0.3s ease; /* Smooth hover effect */
@@ -126,10 +127,6 @@ footer {
 
 /* Media Query for Smaller Screens */
 @media (max-width: 768px) {
-    body {
-        font-size: 14px; /* Reduce base font size for smaller screens */
-    }
-
     header {
         padding: 20px 10px; /* Adjust padding */
     }
@@ -156,11 +153,11 @@ footer {
     }
 
     .horizontal-gallery img {
-        height: 300px; /* Reduce image height */
+        max-height: 30vh; /* Reduce image height for smaller screens */
     }
 
     .horizontal-gallery-shorter img {
-        height: 150px; /* Reduce image height */
+        max-height: 20vh; /* Reduce image height for smaller screens */
     }
 
     footer {
