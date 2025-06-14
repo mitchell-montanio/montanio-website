@@ -58,7 +58,8 @@ header p {
     flex-shrink: 0; /* Prevent images from shrinking */
     width: auto;
     max-height: 50vh; /* Scale height relative to viewport height */
-    max-width: 100%; /* Ensure images don't overflow their container */
+    /* max-width: 100%;  */
+    /* Ensure images don't overflow their container */
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     transition: transform 0.3s ease; /* Smooth hover effect */
@@ -76,7 +77,8 @@ header p {
     flex-shrink: 0; /* Prevent images from shrinking */
     width: auto;
     max-height: 30vh; /* Scale height relative to viewport height */
-    max-width: 100%; /* Ensure images don't overflow their container */
+    /* max-width: 100%;  */
+    /* Ensure images don't overflow their container */
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     transition: transform 0.3s ease; /* Smooth hover effect */
@@ -155,7 +157,8 @@ footer {
     .horizontal-gallery img,
     .horizontal-gallery-shorter img {
         width: auto; /* Maintain width scaling */
-        max-width: 60vh; /* Scale down relative to container width */
+        /* max-width: 60vh;  */
+        /* Scale down relative to container width */
         max-height: 20vh; /* Scale height relative to viewport height */
         aspect-ratio: auto; /* Maintain proper dimensions */
     }
