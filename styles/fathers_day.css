@@ -49,8 +49,8 @@ header p {
 .horizontal-gallery {
     display: flex;
     overflow-x: auto; /* Enable horizontal scrolling */
-    gap: 15px; /* Space between images */
-    padding: 10px; /* Padding around the gallery */
+    gap: 1.5vh; /* Space between images */
+    padding: 1vh; /* Padding around the gallery */
     scroll-behavior: smooth; /* Smooth scrolling effect */
 }
 
@@ -67,8 +67,8 @@ header p {
 .horizontal-gallery-shorter {
     display: flex;
     overflow-x: auto; /* Enable horizontal scrolling */
-    gap: 15px; /* Space between images */
-    padding: 10px; /* Padding around the gallery */
+    gap: 1.5vh; /* Space between images */
+    padding: 1vh; /* Padding around the gallery */
     scroll-behavior: smooth; /* Smooth scrolling effect */
 }
 
@@ -126,7 +126,7 @@ footer {
 }
 
 /* Media Query for Smaller Screens */
-@media (max-width: 768px) {
+@media (max-width: 100%) {
     header {
         padding: 20px 10px; /* Adjust padding */
     }
@@ -152,12 +152,12 @@ footer {
         margin-bottom: 20px; /* Adjust spacing */
     }
 
-    .horizontal-gallery img {
-        max-height: 30vh; /* Reduce image height for smaller screens */
-    }
-
+    .horizontal-gallery img,
     .horizontal-gallery-shorter img {
-        max-height: 20vh; /* Reduce image height for smaller screens */
+        width: auto; /* Maintain width scaling */
+        max-width: 90%; /* Scale down relative to container width */
+        max-height: 20vh; /* Scale height relative to viewport height */
+        aspect-ratio: auto; /* Maintain proper dimensions */
     }
 
     footer {
