@@ -25,11 +25,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         startAutoScroll();
 
-        // Pause auto-scroll on hover
-        gallery.addEventListener('mouseenter', () => clearInterval(autoScroll));
-        gallery.addEventListener('mouseleave', startAutoScroll);
+        // Pause auto-scroll on mouse hover or touch
+        function pauseAutoScroll() {
+            clearInterval(autoScroll);
+        }
+        function resumeAutoScroll() {
+            startAutoScroll();
+        }
 
-        // Wheel scroll (manual override)
+        gallery.addEventListener('mouseenter', pauseAutoScroll);
+        gallery.addEventListener('mouseleave', resumeAutoScroll);
+        gallery.addEventListener('touchstart', pauseAutoScroll, {passive: true});
+        gallery.addEventListener('touchend', resumeAutoScroll, {passive: true});
+
+        // Wheel scroll (manual override for desktop)
         gallery.addEventListener('wheel', (e) => {
             if (e.deltaY === 0) return;
             e.preventDefault();
