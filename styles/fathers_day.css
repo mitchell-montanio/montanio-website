@@ -210,3 +210,13 @@ footer {
         max-width: 90%; /* Adjust width */
     }
 }
+
+/* Styles for Touch Devices */
+@media (hover: none) and (pointer: coarse) {
+    .horizontal-gallery img:hover,
+    .horizontal-gallery-shorter img:hover {
+        /* Remove hover effects for touch devices */
+        transform: none !important;
+        box-shadow: none !important;
+    }
+}
