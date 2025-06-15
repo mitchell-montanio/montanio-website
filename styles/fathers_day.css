@@ -64,6 +64,9 @@ header p {
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     transition: transform 0.3s ease; /* Smooth hover effect */
+    -webkit-user-drag: none;
+    user-drag: none;
+    touch-action: pan-x;
 }
 
 .horizontal-gallery-shorter {
@@ -84,6 +87,14 @@ header p {
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     transition: transform 0.3s ease; /* Smooth hover effect */
+    -webkit-user-drag: none;
+    user-drag: none;
+    touch-action: pan-x;
+}
+
+.horizontal-gallery,
+.horizontal-gallery-shorter {
+    touch-action: pan-x;
 }
 
 .horizontal-gallery img:hover {

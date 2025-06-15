@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         gallery.addEventListener('mouseenter', pauseAutoScroll);
         gallery.addEventListener('mouseleave', resumeAutoScroll);
-        gallery.addEventListener('touchstart', pauseAutoScroll, {passive: true});
-        gallery.addEventListener('touchend', resumeAutoScroll, {passive: true});
+        // gallery.addEventListener('touchstart', pauseAutoScroll, {passive: true});
+        // gallery.addEventListener('touchend', resumeAutoScroll, {passive: true});
 
         // Wheel scroll (manual override for desktop)
         gallery.addEventListener('wheel', (e) => {
