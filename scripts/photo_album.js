@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const galleries = document.querySelectorAll('.horizontal-gallery, .horizontal-gallery-shorter');
 
+    function isTouchDevice() {
+        return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    }
+
     galleries.forEach(gallery => {
         let direction = 1;
         let autoScroll;
@@ -21,15 +25,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }, 10);
         }
-        startAutoScroll();
 
-        // Only pause/resume auto-scroll on hover for desktop
-        function isTouchDevice() {
-            return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-        }
+        // Only enable auto-scroll on non-touch devices (desktop)
         if (!isTouchDevice()) {
+            startAutoScroll();
+
             gallery.addEventListener('mouseenter', () => clearInterval(autoScroll));
             gallery.addEventListener('mouseleave', startAutoScroll);
+
+            // Adjust scroll speed on window resize (desktop only)
+            window.addEventListener('resize', () => {
+                clearInterval(autoScroll);
+                startAutoScroll();
+            });
         }
 
         // Wheel scroll (manual override for desktop)
@@ -39,10 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
             gallery.scrollLeft += e.deltaY * 3;
         }, { passive: false });
 
-        // Adjust scroll speed on window resize
-        window.addEventListener('resize', () => {
-            clearInterval(autoScroll);
-            startAutoScroll();
-        });
+        // On mobile, native swipe/scroll will work with no auto-scroll interference
     });
 });
