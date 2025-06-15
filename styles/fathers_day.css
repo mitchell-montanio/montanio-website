@@ -96,7 +96,16 @@ header p {
 
 .horizontal-gallery,
 .horizontal-gallery-shorter {
+    overflow-x: auto;
     touch-action: pan-x;
+    -webkit-overflow-scrolling: touch;
+}
+
+.horizontal-gallery img,
+.horizontal-gallery-shorter img {
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .horizontal-gallery img:hover {

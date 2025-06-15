@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     galleries.forEach(gallery => {
         let direction = 1;
         let autoScroll;
-        let resumeTimeout;
 
         function getScrollSpeed() {
             const base = gallery.clientWidth * 0.0075;
@@ -24,27 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         startAutoScroll();
 
-        function pauseAutoScroll() {
-            clearInterval(autoScroll);
-            if (resumeTimeout) clearTimeout(resumeTimeout);
-        }
-        function resumeAutoScroll() {
-            // Add a short delay before resuming auto-scroll after touch
-            resumeTimeout = setTimeout(startAutoScroll, 400);
-        }
-
-        // Only use hover logic on non-touch devices
+        // Only pause/resume auto-scroll on hover for desktop
         function isTouchDevice() {
             return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
         }
         if (!isTouchDevice()) {
-            gallery.addEventListener('mouseenter', pauseAutoScroll);
+            gallery.addEventListener('mouseenter', () => clearInterval(autoScroll));
             gallery.addEventListener('mouseleave', startAutoScroll);
         }
-
-        // Touch devices: pause on touch, resume after short delay on touch end
-        gallery.addEventListener('touchstart', pauseAutoScroll, {passive: true});
-        gallery.addEventListener('touchend', resumeAutoScroll, {passive: true});
 
         // Wheel scroll (manual override for desktop)
         gallery.addEventListener('wheel', (e) => {
