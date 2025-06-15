@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const galleries = document.querySelectorAll('.horizontal-gallery, .horizontal-gallery-shorter');
 
-    function isTouchDevice() {
-        return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    }
+    // Detect touch device ONCE
+    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
     galleries.forEach(gallery => {
         let direction = 1;
@@ -26,14 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 10);
         }
 
-        // Only enable auto-scroll on non-touch devices (desktop)
-        if (!isTouchDevice()) {
+        // Only enable auto-scroll and hover logic on non-touch devices (desktop)
+        if (!isTouch) {
             startAutoScroll();
 
             gallery.addEventListener('mouseenter', () => clearInterval(autoScroll));
             gallery.addEventListener('mouseleave', startAutoScroll);
 
-            // Adjust scroll speed on window resize (desktop only)
             window.addEventListener('resize', () => {
                 clearInterval(autoScroll);
                 startAutoScroll();
@@ -47,6 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
             gallery.scrollLeft += e.deltaY * 3;
         }, { passive: false });
 
-        // On mobile, native swipe/scroll will work with no auto-scroll interference
+        // No hover or auto-scroll logic is attached for mobile/touch devices
     });
 });
