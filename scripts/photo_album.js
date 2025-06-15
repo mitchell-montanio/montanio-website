@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
         let autoScroll;
 
         function getScrollSpeed() {
-            return gallery.clientWidth * 0.0075; // 0.75% of visible width per tick (25% slower)
+            const base = gallery.clientWidth * 0.0075;
+            return Math.max(base, 2); // Never scroll less than 2px per tick
         }
 
         function startAutoScroll() {
