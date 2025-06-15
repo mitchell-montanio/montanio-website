@@ -65,7 +65,8 @@ header p {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     transition: transform 0.3s ease; /* Smooth hover effect */
     -webkit-user-drag: none;
-    user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
     touch-action: pan-x;
 }
 
@@ -88,7 +89,8 @@ header p {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     transition: transform 0.3s ease; /* Smooth hover effect */
     -webkit-user-drag: none;
-    user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
     touch-action: pan-x;
 }
 
