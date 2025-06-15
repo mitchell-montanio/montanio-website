@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let autoScroll;
 
         function getScrollSpeed() {
-            return window.innerWidth <= 768 ? 5 : 10;
+            return gallery.clientWidth * 0.0075; // 0.75% of visible width per tick (25% slower)
         }
 
         function startAutoScroll() {
