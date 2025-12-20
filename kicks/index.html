@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#111827" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Kick Counter" />
+
+  <!-- iOS icon (optional but recommended) -->
+  <link rel="apple-touch-icon" href="icons/icon-180.png" />
+
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <title>Kick Counter</title>
+</head>
+<body>
+  <header class="header">
+    <div class="safe-area"></div>
+    <h1>Kick Counter</h1>
+    <p class="sub">Start a timer, tap once per kick.</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="row">
+        <label for="minutes" class="label">Session length</label>
+        <select id="minutes" class="select">
+          <!-- populated by JS -->
+        </select>
+      </div>
+
+      <div class="timer" id="timer">60:00</div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-label">Kicks</div>
+          <div class="stat-value" id="kicks">0</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Kicks/min</div>
+          <div class="stat-value" id="kpm">0.00</div>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button id="startBtn" class="btn primary">Start</button>
+        <button id="kickBtn" class="btn success" disabled>Kick</button>
+        <button id="stopBtn" class="btn danger" disabled>Stop & Save</button>
+      </div>
+
+      <div class="note" id="note"></div>
+    </section>
+
+    <section class="card">
+      <div class="row between">
+        <h2>History</h2>
+        <div class="history-actions">
+          <button id="exportBtn" class="btn ghost">Export CSV</button>
+          <button id="clearBtn" class="btn ghost danger-outline">Clear</button>
+        </div>
+      </div>
+
+      <div id="history" class="history"></div>
+    </section>
+
+    <section class="card tip">
+      <h2>Install on iPhone</h2>
+      <ol>
+        <li>Open this page in <b>Safari</b></li>
+        <li>Tap <b>Share</b></li>
+        <li>Tap <b>Add to Home Screen</b></li>
+      </ol>
+      <p class="muted">Tip: Pin this as <b>Kick Counter</b> and it will open full-screen like an app.</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    // Register service worker for offline support
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>
