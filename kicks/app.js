@@ -13,9 +13,9 @@ const exportBtn = document.getElementById("exportBtn");
 const clearBtn = document.getElementById("clearBtn");
 
 let isRunning = false;
-let selectedMinutes = 60;
-let totalSeconds = 60 * 60;
-let remainingSeconds = 60 * 60;
+let selectedMinutes = 120;
+let totalSeconds = 120 * 60;
+let remainingSeconds = 120 * 60;
 let kickCount = 0;
 let startTimestamp = null; // ms
 let tickInterval = null;
