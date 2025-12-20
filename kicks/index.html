@@ -12,7 +12,7 @@
   <link rel="apple-touch-icon" href="icons/icon-180.png" />
 
   <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="./styles.css" />
 
   <title>Kick Counter</title>
 </head>
@@ -43,6 +43,20 @@
           <div class="stat-label">Kicks/min</div>
           <div class="stat-value" id="kpm">0.00</div>
         </div>
+      </div>
+
+      <div class="chart-wrap">
+        <div class="chart-title">
+          <span>Kick timeline</span>
+          <span class="muted" id="chartMeta"></span>
+        </div>
+        <div id="timeline" class="timeline" role="img" aria-label="Kick timeline"></div>
+
+        <div class="chart-title" style="margin-top:10px;">
+          <span>Intervals (seconds)</span>
+          <span class="muted" id="intervalMeta"></span>
+        </div>
+        <div id="intervals" class="intervals" role="img" aria-label="Kick intervals"></div>
       </div>
 
       <div class="buttons">
@@ -77,14 +91,23 @@
     </section>
   </main>
 
-  <script src="app.js"></script>
+  <script src="./app.js"></script>
   <script>
-    // Register service worker for offline support
+    // Development helper: aggressively unregister any service workers on load.
+    // This prevents stale service worker caches from breaking Live Server.
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js').catch(() => {});
+      navigator.serviceWorker.getRegistrations().then(regs => {
+        for (const r of regs) {
+          console.log('Unregistering service worker:', r);
+          r.unregister();
+        }
+      }).catch(err => {
+        console.warn('SW unregister failed', err);
       });
     }
+
+    // Also provide a small hint in console for debugging Live Server issues
+    console.log('kick counter: running on', window.location.href);
   </script>
 </body>
 </html>
