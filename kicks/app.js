@@ -165,7 +165,7 @@ function populateMinutes() {
   for (let m = 5; m <= 120; m += 5) options.push(m);
 
   minutesSelect.innerHTML = options
-    .map(m => `<option value="${m}" ${m === 60 ? "selected" : ""}>${m} minutes</option>`)
+    .map(m => `<option value="${m}" ${m === 120 ? "selected" : ""}>${m} minutes</option>`)
     .join("");
 
   selectedMinutes = Number(minutesSelect.value);
